@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="big-box">
+        <h1>ToDo List</h1>
+
+        <div id="slidingElementFilter">
+          <div class="filter_tasks">
+            <div class="filter_container">
+              <label for="filter_priority">Filter by Priority:</label>
+              <select id="filter_priority">
+                <option value="All">All</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+            </div>
+
+            <div class="filter_container">
+              <label for="filter_category">Filter by Category:</label>
+              <input
+                type="text"
+                id="filter_category"
+                placeholder="Enter a category"
+              />
+            </div>
+
+            <div class="filter_container date_container">
+              <div class="s_date">
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date" />
+              </div>
+              <div class="e_date">
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date" />
+              </div>
+            </div>
+            <button id="filter_button" class="filter-btn">Filter</button>
+          </div>
+        </div>
+        <button id="slideButtonFilter">Filter Tasks</button>
+        <div id="search-sort-container">
+          <div>
+            <label for="sorting">Sort by:</label>
+            <select name="sorting" id="sorting">
+              <option value="None">None</option>
+              <option value="Name">Name</option>
+              <option value="Due Date">Due Date</option>
+              <option value="Priority">Priority</option>
+            </select>
+          </div>
+          <div class="searchContainer">
+            <button id="search-button">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="search-icon"
+                data-name="MagnifyingGlass"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10ZM15.6177 17.0319C14.078 18.2635 12.125 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 12.125 18.2635 14.078 17.0319 15.6177L22.7071 21.2929L21.2929 22.7071L15.6177 17.0319Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </button>
+            <input type="search" id="search-input" placeholder="Search..." />
+          </div>
+          <div id="viewBackLogs">
+            <button id="backlog-btn">Show Backlogs</button>
+          </div>
+          <div id="ActivityLogs">
+            <button id="activitylog-btn">Show Activity Logs</button>
+          </div>
+        </div>
+
+        <div class="top-box">
+          <ul id="task-list"></ul>
+        </div>
+        <button id="slideButtonBottom">Add a task</button>
+        <div id="slidingElementBottom">
+          <div class="bottom-box" id="bottom-box">
+            <input id="task-input" type="text" placeholder="Enter a task" />
+            <div class="task_info">
+              <div class="priority_container">
+                <div>Set Priority</div>
+                <select id="task_priority">
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
+              </div>
+              <div class="category_container">
+                <div>Set Category</div>
+                <input
+                  type="text"
+                  id="task_category"
+                  placeholder="Enter a category"
+                />
+              </div>
+              <div class="due_date_container">
+                <div>Set Due Date</div>
+                <input type="date" id="task_due_date" />
+              </div>
+              <div id="tagsContainer">
+                <label for="taskTags">Tags:</label>
+                <input
+                  type="text"
+                  id="taskTags"
+                  name="taskTags"
+                  placeholder="Enter tags separated by commas"
+                />
+              </div>
+              <div id="reminderContainer">
+                <label for="reminder">Set Reminder:</label>
+                <input type="datetime-local" name="reminder" id="reminder" />
+              </div>
+            </div>
+            <button id="add-btn" class="add-btn">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="logic.js"></script>
+  </body>
+</html>
